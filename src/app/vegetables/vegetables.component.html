@@ -1,0 +1,14 @@
+<h2>There are {{Vegetables.length}} Vegetables. </h2>
+
+
+<div [ngClass]="{'greaterthan4':(Vegetables.length>4),'lessthan3':(Vegetables.length<3)}">
+
+    <ul>
+    <li *ngFor="let v of Vegetables" >{{v}} <button class="btn btn-primary" (click)="deleteVegetables(v)">Delete</button>
+ </li>
+    </ul>
+<div>
+<input #Vegetable type="text" (keyup.enter)="addVegetables(Vegetable)"/>
+
+</div>
+</div>

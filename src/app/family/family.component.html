@@ -1,0 +1,13 @@
+<h1>famaily details list</h1>
+<table border="1">
+<tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>DOB</th>
+</tr>
+<tr *ngFor = "let details of data">
+    <td>{{details.Firstname}}</td>
+    <td>{{details.Lastname}}</td>
+    <td>{{details.Dob}}</td>
+</tr>
+</table>

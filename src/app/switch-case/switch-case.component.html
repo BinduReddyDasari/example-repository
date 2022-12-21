@@ -1,0 +1,27 @@
+<h2 class="center1">Select the pizza</h2>
+
+    <div class="center1">
+
+        <button [class.active]="pizza=='Small'" class="btn btn-primary btn1" (click)="pizza='Small'">
+            small
+        </button>
+
+        <button [class.active]="pizza=='Medium'" class="btn btn-primary btn1" (click)="pizza='Medium'">
+        Medium
+        </button>
+
+        <button [class.active]="pizza=='Large'" class="btn btn-primary btn1" (click)="pizza='Large'">
+            Large
+        </button>
+
+    </div>
+    <div class="center1" [style.color]="'red'">
+        Suggested number of persons.
+
+    </div>
+    <div [ngSwitch]="pizza" class="center">
+        <div *ngSwitchCase="'Small'">1 persons</div>
+        <div *ngSwitchCase="'Medium'">3 persons</div>
+        <div *ngSwitchCase="'Large'">4 persons</div>
+        <div *ngSwitchDefault>No pizza selected</div>
+    </div>

@@ -1,0 +1,45 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+<div class="form-group">
+    <label for="courseName">Enter Your Name</label>
+<input
+required 
+minlength=3
+ngModel 
+name="courseName"
+#courseName="ngModel"
+id="courseName"
+type="text"
+class="form-control"
+(change)="logCourse(courseName)">
+<label for="password">Enter Your password</label>
+<input ngModel name="Password" type="password" pattern="1a12b" #password="ngModel" class="form-control">
+
+<div class="alret alret-danger" *ngIf="!courseName.valid && courseName.touched">
+<div *ngIf="courseName.errors?.['minlength']"> Minimum length not present</div>
+<div *ngIf="courseName.errors?.['required']">Please enter the value</div>
+<div *ngIf="password.errors?.['pattern']">Format not supported</div>
+    </div>
+</div>
+<label>Select the course</label>
+<select class="form-model" ngModel for="courseName" Name="course" #course="ngModel" type="option">
+    <option value=" ">Select the subscription</option>
+    <option value="course1"> Monthly</option>
+    <option value="course2"> Halfyearly</option>
+    <option value="course3"> Quaterly</option>
+
+</select>
+<label>Mode of connection</label>
+<div *ngFor="let m of modes" class="radio">
+    
+    <input ngModel type="radio" name="modes" #modes= ngModel [value]="m">{{m}}
+</div>
+<div class="form-control">
+    <label>
+        <input ngModel type="checkbox" name="checkbox" #checkbox="ngModel">Subscribe
+    </label>
+</div>
+<button class="btn btn-primary" type="button">Submit</button>
+<p>
+    {{f.value |json}}
+</p>
+</form>

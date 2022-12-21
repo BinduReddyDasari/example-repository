@@ -1,0 +1,12 @@
+td{
+    border-color: brown;
+    border-width: 3;
+}
+tr{ border-color: blue;
+    border-width: 3;
+    background-color: yellowgreen;
+
+}
+table,th,td{
+    border: 1px solid black;
+}

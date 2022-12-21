@@ -1,0 +1,13 @@
+<h1>There are {{details.length}} number
+<div>
+    <ul>
+        <li *ngFor="let c of details">{{c.id}}
+            {{c.name}} {{c.colours}}
+            <a [routerLink]="['/company',c.id,c.name,c.brightness]"
+            [queryParams]="{id:1}">{{c.name}} 
+            {{c.brightness}}</a>
+        
+        </li>
+    </ul>
+</div>
+</h1>

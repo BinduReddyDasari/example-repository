@@ -1,0 +1,19 @@
+<h3>{{title}}</h3>  <!---String Interpolation---->
+
+<h2>{{name}}</h2>
+<button (click)="updateName()">update button</button>   <!---Event Binding---->
+
+<br>
+<br>
+<br>
+
+<h1 style="color:green">TATA</h1>    <!----property Binding---->
+<input type="type" [disabled]="disabledBox"[value]="property">
+<button class="btn btn-primary"(click)="enableBox()">Enable TextBox</button>
+
+<br>
+<br>
+<br>
+
+Colour:<input type="text" [(ngModel)]="colour">  <!-----Two-way Binding------>
+<p>{{colour}}</p>

@@ -1,0 +1,64 @@
+<h1>Reactive Forms</h1>
+
+<form [formGroup]="from">
+    <div class="form-group">
+
+    <label for="username">username</label>
+     <input formControlName="username" type="text" class="form-control" id="username"></div>
+     <div class="alert alert-danger" *ngIf="getControl['username'].untouched && !getControl['username'].valid">
+    
+         <div *ngIf="getControl['username'].errors?.['required']">username required</div>
+            <div *ngIf="getControl['username'].errors?.['minlength']">minlength</div>
+            <div *ngIf="getControl['username'].errors?.['cannotContainSpace']">cannotContainSpace</div>
+     </div>
+                    <!-------OLD PASSWORD------->
+        <label for="oldPassword">Old Password</label>
+            <input formControlName="oldPassword" type="text" class="form-control" id="oldPassword">
+     
+             <div class="alret alret-danger" *ngIf="getControl['oldPassword'].touched && getControl['oldPassword'].invalid">
+
+            <div *ngIf="getControl['oldPassword'].errors?.['required']">
+        
+            Field Required
+            </div> 
+            </div>
+             
+            <!------------NEW PASSWORD---------->
+           <div class="form-group">
+             <label for="newPassword">New Password</label>
+           <input formControlName="newPassword" type="text" class="form-control" id="newPassword"></div>
+             <div class="alert alert-danger" *ngIf="getControl['newPassword'].touched && getControl['newPassword'].invalid">
+
+              <div *ngIf="getControl['newPassword'].errors?.['required']">
+
+              Enter the newPassword
+              </div>
+             </div>
+
+
+           <!-------CONFiRM PASSWORD--------->
+           <div class="form-group">
+            <label for="confirmedPassword">confirmedPassword</label>
+            <input formControlName="confirmedPassword" type="text" class="form-control" id="confirmPassword"></div>
+            <div class="alert alert-danger" *ngIf="getControl['confirmedPassword'].touched && getControl['confirmedPassword'].invalid">
+
+              <div *ngIf="getControl['confirmedPassword'].errors?.['required']">
+              </div>
+            </div>
+
+
+            <!----------Gender---------->
+             <p>
+              <label for="Option">Gender</label>
+              <select class="form-control" name="xyz">
+              <option vale="female">female</option>
+              <option vale="male">male</option>
+              <option vale="Transgender">Transgender</option>
+
+              </select>
+            </p>
+        <button class="btn btn-primary">Sign Up</button>
+    
+
+</form>
+

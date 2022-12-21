@@ -1,0 +1,21 @@
+<h1> Temaplate Driven Form</h1>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+            <!-------------first Name------------>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input required ngModel name="firstName" #firstName="ngModel" id="firstName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">first Name is required.</div>
+    </div>
+
+
+        <!-------------Last Name------------>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input required ngModel name="lastName" #lastName="ngModel" id="lastName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">last Name is required.</div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
